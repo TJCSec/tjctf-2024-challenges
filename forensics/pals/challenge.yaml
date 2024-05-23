@@ -1,0 +1,6 @@
+name: pals
+author: sToro
+description: my friends keep sending me this picture, but it doesn't look like anything! can you figure out what it is?
+flag: tjctf{not_very_palatable_9623c1c9}
+provide:
+  - pals.png

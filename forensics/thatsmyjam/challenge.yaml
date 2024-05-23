@@ -1,0 +1,12 @@
+name: thatsmyjam
+author: bhkrayola
+description: |-
+  Please dont judge my Spotify Wrapped...
+
+  Submit your flag in lowercase and remember to wrap with {}. 
+  
+provide:
+  - disk.img.gz
+  
+flag:
+  file: flag.txt

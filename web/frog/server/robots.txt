@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /secret-frogger-78570618/

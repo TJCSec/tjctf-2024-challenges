@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music checkout</title>
+</head>
+
+<body>
+    <style>
+        .title {
+            font-family: sans-serif;
+        }
+
+        .item {
+            font-family: monospace;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        table {
+            table-layout: fixed;
+            text-align: left;
+        }
+    </style>
+
+    <h1 class="title">MUSIC CHECKOUT</h1>
+    <h4 class="title">LAST MONTH</h3>
+        <p class="item">ORDER #0001 for {{ username|safe }}</p>
+        <p class="item"></p>
+        <table>
+            <col width="20px" />
+            <col width="100px" />
+            <col width="40px" />
+            <col width="40px" />
+            <col width="50px" />
+            <tbody>
+                <tr class="item">
+                    <td>qty</td>
+                    <td>item</td>
+                    <td>sale</td>
+                    <td>discount</td>
+                    <td>amt</td>
+
+                </tr>
+                {% for song in songs %}
+                <tr>
+                    <td class="item">{{ "{0:02}".format(loop.index)}} </td>
+                    {% for field in song %}
+                    <td class="item">{{ field }}</td>
+                    {%endfor%}
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+</body>
+
+</html>

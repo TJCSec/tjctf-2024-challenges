@@ -1,0 +1,4 @@
+1. Set date to a monday.
+2. Set time to 2:25 pm. 
+
+Hit the wave the flag button and check logcat.

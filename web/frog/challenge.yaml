@@ -1,0 +1,19 @@
+name: frog
+author: kpdfgo
+description: |
+  I keep seeing frogs in my room at 2am... please help me get rid of them...
+
+  {{ link }}
+containers:
+  main:
+    build: server
+    ports:
+      - 80
+
+flag:
+  file: server/secret-frogger-78570618/flag-ed8f2331.txt
+
+expose:
+  main:
+    - target: 80
+      http: frog

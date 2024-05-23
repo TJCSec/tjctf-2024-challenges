@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room</title>
+    <link rel="stylesheet" href="/static/room.css">
+</head>
+
+<body>
+    <nav>
+        <div>
+            <h1><span id="name"></span></h1>
+        </div>
+        <div>
+            <h2><span id="score"></span> | {{ room_code }}</h2>
+        </div>
+    </nav>
+    <h1 id="question">
+        question
+    </h1>
+    <div class="options">
+        <button class="option" id="o1">
+            <h2>.</h2>
+        </button>
+        <button class="option" id="o2">
+            <h2>.</h2>
+        </button>
+        <button class="option" id="o3">
+            <h2>.</h2>
+        </button>
+        <button class="option" id="o4">
+            <h2>.</h2>
+        </button>
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</html>

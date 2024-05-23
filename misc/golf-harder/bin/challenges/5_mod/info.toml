@@ -1,0 +1,54 @@
+description = '''
+
+
+5. "Modular"
+    You may have noticed a theme here.
+'''
+
+length = 27
+
+matches = [
+    'xxxxx%xxxxxxxx=xxxxx',
+    'xxxxxxxxxxxx%xxxxxxxxxxxxxxxxx=xxxxxxxxxxxx',
+    '%xxxx=',
+    'xxxxxxxxxxx%xxxxxxxxxxxxxxxxxxx=xxxxxxxxxxx',
+    'xxxxxx%xxxxxx=',
+    'xxxxxxxxxxxxxxxxxxxx%xxxxxxxxxx=',
+    'xxxxxxxxx%xxxxxxxx=x',
+    'xxxxxxxxxxxxxx%xxxxxxxx=xxxxxx',
+    'xxxxxxxxxxxxx%xx=x',
+    'x%xxxxxxxxxxxxxx=x',
+    'xxxx%x=',
+    'xxxxxxxxxxxxxxxxxx%xxxxxxxxx=',
+    'xxxxxxxxxxxxxxxx%xxxxx=x',
+    'xxxxxxxxxxxxx%xxxxxx=x',
+    'xxxxxxxxx%xxxxxxxxxxxxxxxx=xxxxxxxxx',
+    'xxxxxxxxxxxxx%xxxxxxxxxxxxxxxxxxx=xxxxxxxxxxxxx',
+    'xxxxxxxxxxxx%xxxxxxxxxxxxxxxx=xxxxxxxxxxxx',
+    '%x=',
+    'xxxxxxxxxxxx%xxxxxxxx=xxxx',
+    'xxxxxxxxxxxxxxxxx%xxxxx=xx',
+]
+
+nonmatches = [
+    'xxxxxxxxxxxxx%xxxxxxxxxxx=xxx',
+    'xxxxxxxx%xxxxxxxxxxxxxxxx=xxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxx%xxxxxxxxxxxxxxxxxxxx=xxxx',
+    'xxxxxxxxxxxxx%xxxxxxxxxxx=xxxxxxx',
+    'xxxxxxxx%xxxxxxxxxx=xxxxxx',
+    'xxxxx%xx=xxxxx',
+    'xx%xx=xxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxx%xxxxxxx=xxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxx%xxxxxxxxx=xxxxxxxxxxx',
+    'xxxxxxxxxxxxx%xxxxxxxxxxxxxxxx=xxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxx%xx=xxxxx',
+    'xxxx%xx=xxxxxxxx',
+    'xxxxxx%xx=xxxxxxxxxxxxxx',
+    'xxxxxxxx%xxx=',
+    'xxxxxxxxxxxxxxxxxxxx%xxxxxxxxxx=xxxxxxxx',
+    'xxxx%xxxx=xxxxxxxxxxxxx',
+    'xxxxxxxx%xxxxxxxxxxxxxxxxxxxx=xxxxxxxxxxxxxxxx',
+    'xxxx%xxxxxxxxxxxxx=xx',
+    'xxxxxxx%xxxxxxxxxxxxxxxxxx=xxxxxxxx',
+    'x%xxxxxxxxxxxxxxxxxx=',
+]

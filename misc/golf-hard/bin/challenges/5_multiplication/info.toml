@@ -1,0 +1,54 @@
+description = '''
+
+
+5. "Multiplication"
+    Seems self-explanatory.
+'''
+
+length = 20
+
+matches = [
+    'xxx*xxxxx=xxxxxxxxxxxxxxx',
+    'xxxxx*xxxx=xxxxxxxxxxxxxxxxxxxx',
+    'xxxxx*xxx=xxxxxxxxxxxxxxx',
+    'xx*xx=xxxx',
+    'xx*xxxx=xxxxxxxx',
+    'xxx*xxxxxx=xxxxxxxxxxxxxxxxxx',
+    'xxx*xxxxx=xxxxxxxxxxxxxxx',
+    'xx*xxxxx=xxxxxxxxxx',
+    'xx*xxx=xxxxxx',
+    'xxxxx*xxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'x*xx=xx',
+    'xxxxxx*xxxx=xxxxxxxxxxxxxxxxxxxxxxxx',
+    'x*x=x',
+    'xxx*xxx=xxxxxxxxx',
+    'xxxx*xxxxxx=xxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxx*xx=xxxxxxxx',
+    '*x=',
+    'xxxxx*xxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxx*xx=xxxxxx',
+    'xxxx*xxxxxx=xxxxxxxxxxxxxxxxxxxxxxxx',
+]
+
+nonmatches = [
+    'x*x=xx',
+    'xxxxxxxx*xxxx=xxxxxxxx',
+    'x*xxxxxxxx=xxxxxxx',
+    'xxxxxxx*xxxxx=xxxxxxxxx',
+    'xxxxxxxx*xxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxx*xxxxx=xxxxxxxxxxxxxx',
+    'xxx*xxxxxx=xxxx',
+    'xx*xxxx=xxxxxxxxxx',
+    'xxxx*xxxxx=xx',
+    'xxx*xxx=xxx',
+    'xxxx*xxxxxxxx=xxxxxxxxxxxxxxxxxxxx',
+    '*x=x',
+    'xxxxxx*xxxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xx*xxxxxx=xxxxxxxxx',
+    'xxxxxxxx*xxxxxx=xxxxxxxxxxxxxxxxxxxxxx',
+    'xxxx*xxxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxx*xx=xxxxxxxxxxxxxxx',
+    'x*xxxxxxx=x',
+    'xx*x=x',
+    'xx*xxxxx=xxxxxx',
+]

@@ -1,0 +1,6 @@
+
+
+If you liked these challenges (and who wouldn't?), check out regex.alf.nu.
+Several of these were inspired by ones on there.
+
+tjctf{davidebyzero_is_my_hero_f7f43a2d}

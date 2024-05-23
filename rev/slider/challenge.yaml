@@ -1,0 +1,11 @@
+name: slider
+author: kpdfgo
+description: |
+  do you know slider puzzles??? I sure don't...
+
+  note that the tile corners have information too!
+provide:
+  - src/app/slider
+  - src/app/save.dat
+
+flag: tjctf{do_you_mean_slider_like_the_burger_or_like_you_hardly_know_er_514a5f61}

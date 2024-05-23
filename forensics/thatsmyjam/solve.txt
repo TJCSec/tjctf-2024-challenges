@@ -1,0 +1,2 @@
+Download sus.wav file from /home/avatar-kyoshi/music/sus.wav
+Decrypt morse code audio and wrap with {} 

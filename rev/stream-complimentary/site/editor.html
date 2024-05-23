@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Flow Free Level Editor</title>
+    <style>
+        body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.5em;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px;
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Play</a></li>
+            <li><a href="editor.html">Editor</a></li>
+            <li><a href="generator.html">Generator</a></li>
+        </ul>
+    </nav>
+    <h1 id="win"></h1>
+    <canvas id="draw"></canvas>
+    <br>
+    <div>
+        <button id="copy-btn">Copy puzzle URL to clipboard</button>
+        <label for="grid-size">Enter size of grid:</label>
+        <input type="number" id="grid-size">
+        <br>
+        <button id="empty-btn">Clear puzzle</button>
+        <button id="click-mode">Cycle click mode (current: null)</button>
+        <label for="dot-color">Current color:</label>
+        <input type="color" id="dot-color">
+        <button id="remap-btn">Remap color palette</button>
+    </div>
+    <noscript>This page contains webassembly and javascript content, please enable javascript in your
+        browser.</noscript>
+    <script type="module">
+        import init, { Canvas } from "./pkg/wasm_flow_free.js";
+
+        function bytesToBase64(bytes) {
+            const binString = Array.from(bytes, (byte) =>
+                String.fromCodePoint(byte),
+            ).join("");
+            return btoa(binString);
+        }
+        function base64ToBytes(base64) {
+            const binString = atob(base64);
+            return Uint8Array.from(binString, (m) => m.codePointAt(0));
+        }
+
+        const draw = document.getElementById("draw");
+        const ctx = draw.getContext("2d");
+
+
+        const copybtn = document.getElementById("copy-btn");
+        const gridsize = document.getElementById("grid-size");
+        const emptybtn = document.getElementById("empty-btn");
+        const clickmodebtn = document.getElementById("click-mode");
+        const dotcolor = document.getElementById("dot-color");
+        const remapbtn = document.getElementById("remap-btn");
+
+
+        let wasm = await init();
+        let memory = wasm.memory;
+        let grid_size = 9;
+        const use_filled = false;
+        let canvas = use_filled ? Canvas.gen_filled_board(grid_size, grid_size) : Canvas.gen_new_board(grid_size, grid_size);
+        if (window.location.search) {
+            let params = new URLSearchParams(window.location.search);
+            if (!params.has("size") || !params.has("board")) {
+                console.log("Invalid URL");
+            } else {
+                let size = parseInt(params.get("size"));
+                const board = base64ToBytes(params.get("board"));
+                grid_size = size;
+                canvas.resize(size, size);
+                canvas.from_bytes(board);
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+        gridsize.setAttribute("placeholder", grid_size);
+
+
+        let buffer = new Uint8ClampedArray(memory.buffer, canvas.get_pix_buf(), canvas.canvas_width() * canvas.canvas_height() * 4);
+        let image = new ImageData(buffer, canvas.canvas_width(), canvas.canvas_height());
+
+        draw.width = canvas.canvas_width();
+        draw.height = canvas.canvas_height();
+        canvas.render();
+
+        let currently_focused = null;
+        let is_mouse_down = false;
+        const click_displays = ["clear pipe/add lines", "add dot", "remove dot"];
+        let click_mode = 1;
+        clickmodebtn.textContent = `Cycle click mode (current: ${click_displays[click_mode]})`;
+
+        function attemptConnection(delta) {
+            if (!currently_focused) {
+                return;
+            }
+            const result = canvas.add_connection(currently_focused, delta) || canvas.remove_connection(currently_focused, delta);
+            if (result) {
+                if (delta == 0) {
+                    currently_focused[0] -= 1;
+                } else if (delta == 1) {
+                    currently_focused[0] += 1;
+                } else if (delta == 2) {
+                    currently_focused[1] -= 1;
+                } else if (delta == 3) {
+                    currently_focused[1] += 1;
+                }
+            }
+        }
+        function mdHandler(e) {
+            e.preventDefault();
+            let rect = draw.getBoundingClientRect();
+
+            let x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+            let y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+            let pos = canvas.box_at(x, y);
+            if (click_mode == 0) {
+                currently_focused = pos;
+                canvas.clear_pipe(currently_focused);
+            } else if (click_mode == 1) {
+                let new_color = dotcolor.value.slice(1);
+                new_color = parseInt(new_color, 16);
+                new_color = (new_color & 0xf00000) >> 12 | (new_color & 0x00f000) >> 8 | (new_color & 0x0000f0) >> 4;
+                canvas.add_dot_at(pos[0], pos[1], new_color);
+            }
+            else if (click_mode == 2) {
+                canvas.remove_dot_at(pos[0], pos[1]);
+            }
+            is_mouse_down = true;
+
+        }
+        function muHandler(e) {
+            is_mouse_down = false;
+        }
+        function mmHandler(e) {
+            let clientX = (e.touches ? e.touches[0].clientX : e.clientX);
+            let clientY = (e.touches ? e.touches[0].clientY : e.clientY);
+            let box = canvas.box_at(clientX - draw.getBoundingClientRect().left, clientY - draw.getBoundingClientRect().top);
+            if (box && currently_focused && is_mouse_down) {
+                if (box[0] == currently_focused[0] && box[1] == currently_focused[1]) {
+                    return;
+                }
+                let delta = 999;
+                if (box[0] == currently_focused[0] && box[1] == currently_focused[1] - 1) {
+                    delta = 2;
+                } else if (box[0] == currently_focused[0] && box[1] == currently_focused[1] + 1) {
+                    delta = 3;
+                } else if (box[0] == currently_focused[0] - 1 && box[1] == currently_focused[1]) {
+                    delta = 0;
+                } else if (box[0] == currently_focused[0] + 1 && box[1] == currently_focused[1]) {
+                    delta = 1;
+                }
+                if (delta != 999) {
+                    attemptConnection(delta);
+                }
+            }
+            e.preventDefault();
+        }
+
+        draw.addEventListener("mousedown", mdHandler);
+        draw.addEventListener("mouseup", muHandler);
+        draw.addEventListener("mousemove", mmHandler);
+
+        draw.addEventListener("touchstart", mdHandler);
+
+        draw.addEventListener("touchend", muHandler);
+
+        draw.addEventListener("touchmove", mmHandler);
+
+        window.addEventListener("keydown", function (e) {
+            let key = e.key;
+            if (currently_focused) {
+                let delta = 999;
+                if (key === "ArrowUp" || key === "w") {
+                    e.preventDefault();
+                    delta = 2;
+
+                } else if (key === "ArrowDown" || key === "s") {
+                    e.preventDefault();
+                    delta = 3;
+
+                }
+                else if (key === "ArrowLeft" || key === "a") {
+                    e.preventDefault();
+                    delta = 0;
+
+                }
+                else if (key === "ArrowRight" || key === "d") {
+                    e.preventDefault();
+                    delta = 1;
+
+                }
+                if (delta != 999) {
+                    attemptConnection(delta);
+                }
+            }
+        });
+        copybtn.addEventListener("click", async () => {
+            let params = new URLSearchParams();
+            let board = canvas.to_bytes();
+            let b64 = bytesToBase64(board);
+            params.set("board", b64);
+            params.set("size", grid_size);
+            await navigator.clipboard.writeText(window.location.origin + "/index.html" + "?" + params.toString());
+        });
+
+        gridsize.addEventListener("change", () => {
+            grid_size = parseInt(gridsize.value);
+            canvas.resize(grid_size, grid_size);
+            canvas.render();
+            draw.width = canvas.canvas_width();
+            draw.height = canvas.canvas_height();
+
+            buffer = new Uint8ClampedArray(memory.buffer, canvas.get_pix_buf(), canvas.canvas_width() * canvas.canvas_height() * 4);
+            image = new ImageData(buffer, canvas.canvas_width(), canvas.canvas_height());
+
+            canvas.render();
+        });
+
+        emptybtn.addEventListener("click", () => {
+            canvas.resize(grid_size, grid_size);
+            buffer = new Uint8ClampedArray(memory.buffer, canvas.get_pix_buf(), canvas.canvas_width() * canvas.canvas_height() * 4);
+            image = new ImageData(buffer, canvas.canvas_width(), canvas.canvas_height());
+            canvas.render();
+        });
+
+        clickmodebtn.addEventListener("click", () => {
+            click_mode = (click_mode + 1) % 3;
+            clickmodebtn.textContent = `Cycle click mode (current: ${click_displays[click_mode]})`;
+        });
+
+        remapbtn.addEventListener("click", () => {
+            canvas.remap_color_palette();
+        });
+
+        const renderLoop = () => {
+            canvas.render();
+            ctx.putImageData(image, 0, 0);
+            if (canvas.game_won()) {
+                document.getElementById("win").textContent = "Puzzle is solved";
+            } else {
+                document.getElementById("win").textContent = "";
+            }
+            requestAnimationFrame(renderLoop);
+        };
+
+        requestAnimationFrame(renderLoop);
+
+    </script>
+</body>
+
+</html>

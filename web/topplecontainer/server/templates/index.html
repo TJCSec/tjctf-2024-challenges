@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>topplecontainer</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+  <h1>Placeholder</h1>
+  <p>Submit a file:</p>
+  <form action="/upload" enctype="multipart/form-data" method="POST">
+    <input type="file" id="file" name="file" onchange="this.form.submit();">
+    <br>
+    <span class="err">{{ request.args.get('err', '') }}</span>
+    <span class="success">{{ request.args.get('success', '') }}</span>
+  </form>
+  {% if 'path' in request.args %}
+  <a href="/view/{{ request.args.get('path', '') }}">View your file</a>
+  {% endif %}
+  <h1>All files</h1>
+  {% for f in files %}
+  <p><a href="/view/{{ user_id }}/{{ f.file_id }}">{{ f.name }}</a> (uploaded at {{ f.time }})</p>
+  {% endfor %}
+</body>
+
+</html>

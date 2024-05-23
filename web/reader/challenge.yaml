@@ -1,0 +1,32 @@
+name: reader
+author: sToro
+description: |-
+  Sites today have so much clutter, so I made a site to remove most of the extra stuff!
+
+  {{ link }}
+
+flag:
+  file: server/flag.txt
+
+containers:
+  main:
+    build: server
+    ports:
+      - 5000
+
+expose:
+  main:
+    - target: 5000
+      http: reader
+
+provide:
+  - kind: zip
+    spec:
+      as: server.zip
+      exclude:
+        - server/flag.txt
+      files:
+        - server
+      additional:
+        - path: server/flag.txt
+          str: tjctf{fake_flag}

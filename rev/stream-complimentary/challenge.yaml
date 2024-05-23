@@ -1,0 +1,26 @@
+name: stream-complimentary
+author: sToro
+description: |-
+  I miss the good old days when mobile games weren't only trying to take your money, so I remade a classic one with webassembly!
+
+  {{ link }}
+
+flag: tjctf{freely_flowing_GDq2vSfm}
+
+containers:
+  main:
+    build: site
+    ports:
+      - 80
+
+expose:
+  main:
+    - target: 80
+      http: stream-complimentary
+
+provide:
+  - kind: zip
+    spec:
+      as: site.zip
+      files:
+        - site

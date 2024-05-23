@@ -1,0 +1,11 @@
+name: trip
+author: stosp
+description: |-
+  instead of coding tjctf i went on vacay
+  where wss I
+  flag is tjctf{place-name} no spaces, lowercase, and one word
+
+provide:
+  - IMG_1876.jpeg
+
+flag: tjctf{alhambra}

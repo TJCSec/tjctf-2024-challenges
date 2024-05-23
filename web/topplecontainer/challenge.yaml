@@ -1,0 +1,22 @@
+name: topplecontainer
+author: sToro
+description: |-
+  I made a very unique and original file sharing site!
+
+
+  {{ link }}
+flag:
+  file: server/flag.txt
+
+provide:
+  - server/app.py
+
+containers:
+  main:
+    build: server
+    ports:
+      - 5000
+expose:
+  main:
+    - target: 5000
+      http: topplecontainer

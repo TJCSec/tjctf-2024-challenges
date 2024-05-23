@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #282828;
+    color: #ebdbb2;
+    font-family: 'Roboto', serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    color: #fbf1c7;
+}
+
+a {
+    color: #458588;
+}
+
+a:visited {
+    color: #fb4934;
+}
+
+iframe {
+    width: 90vw;
+    height: 60vh;
+    border: 0px;
+}
+
+.err {
+    color: #cc241d;
+    font-family: 'Courier New', monospace, serif;
+}
+
+.success {
+    color: #689d6a;
+    font-family: 'Courier New', monospace, serif;
+}

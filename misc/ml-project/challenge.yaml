@@ -1,0 +1,10 @@
+name: ml-project
+author: kpdfgo
+description: |
+  check out my new ml project! you can make some pretty cool predictions about the flag!
+flag:
+  file: bin/flag.txt
+provide:
+  - bin/encode.py
+  - bin/model.pth
+  - bin/output.pth

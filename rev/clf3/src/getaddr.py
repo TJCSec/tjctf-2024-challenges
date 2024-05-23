@@ -1,0 +1,7 @@
+f = open("out", "rb").read()
+des = bytes.fromhex("6969696969696969".replace(" ",""))
+print(des)
+print(f.index(des))
+print(f[f.index(des)-16:f.index(des)+16].hex())
+print(f[:32].hex())
+print(f[-32:].hex())

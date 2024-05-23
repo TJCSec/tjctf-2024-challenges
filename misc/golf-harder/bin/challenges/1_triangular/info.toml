@@ -1,0 +1,34 @@
+description = '''
+
+
+1. "Trifecta"
+    Ah yes, unary math regexes. The most hardcore regex subgenre.
+'''
+
+length = 10
+
+matches = [
+    'x',
+    'xxx',
+    'xxxxxx',
+    'xxxxxxxxxx',
+    'xxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+]
+
+nonmatches = [
+    'xx',
+    'xxxxx',
+    'xxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+]

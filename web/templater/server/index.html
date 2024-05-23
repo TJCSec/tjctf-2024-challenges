@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lmaooaaooaooao</title>
+</head>
+
+<body>
+    <h1>use template variables</h1>
+    <form action="/template" method="post">
+        <textarea name="template" id="template" cols="30" rows="10" placeholder="&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;{{title}}&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;h1&gt;{{title}}&lt;/h1&gt;
+        &lt;p&gt;{{content}}&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        "></textarea>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    ---
+
+    <h1>make new template variables</h1>
+    <form action="/add" method="post">
+        <input type="text" name="key" id="key" placeholder="key">
+        <br>
+        <input type="text" name="value" id="value" placeholder="value">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <span id="msg"></span>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const msg = urlParams.get('msg');
+
+        if (msg)
+            document.getElementById('msg').innerText = msg;
+    </script>
+</body>
+
+</html>

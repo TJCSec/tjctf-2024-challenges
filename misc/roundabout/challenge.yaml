@@ -1,0 +1,11 @@
+author: Aedan
+name: roundabout
+description: |-
+  []
+
+provide:
+  - amontillado.txt
+  - enc.py
+  - hint.txt
+  - secret.txt
+flag: tjctf{like_the_hit_indie_musical_2e8a47}

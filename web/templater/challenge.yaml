@@ -1,0 +1,10 @@
+name: templater
+author: kpdfgo
+description: |
+  arghhhhhhhh jinja is so hard and bulky :(((
+
+  [Instancer](https://instancer.tjctf.org/challenge/templater)
+flag:
+  file: server/flag.txt
+provide:
+  - server/app.py

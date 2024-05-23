@@ -1,0 +1,54 @@
+description = '''
+
+
+1. "Warmup"
+    This one's pretty straightforward.
+'''
+
+length = 2
+
+matches = [
+    'ampasimenite',
+    'anchorable',
+    'aconic',
+    'antistrophic',
+    'abrade',
+    'arroya',
+    'apoplex',
+    'ayahs',
+    'arock',
+    'anconoid',
+    'anglophile',
+    'acalephan',
+    'amaze',
+    'adelphe',
+    'anno',
+    'amiable',
+    'aliquid',
+    'achromatin',
+    'aircheck',
+    'antigenically',
+]
+
+nonmatches = [
+    'jasmone',
+    'decisivenesses',
+    'backoff',
+    'whitebark',
+    'physogastrism',
+    'shavee',
+    'hanoverian',
+    'weatherstripped',
+    'naturalize',
+    'lophotrichous',
+    'nonprecedential',
+    'tjctf',
+    'shepherdia',
+    'waymark',
+    'picnicker',
+    'bottleholder',
+    'porule',
+    'diagraming',
+    'solifuge',
+    'phrenetically',
+]

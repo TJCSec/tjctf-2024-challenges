@@ -1,0 +1,10 @@
+name: lightweight-crypto-guard-system
+author: vninja007
+description: |-
+    They said OTPs were too simple.
+flag:
+    file: flag.txt
+
+provide:
+    - encode.py
+    - out.txt

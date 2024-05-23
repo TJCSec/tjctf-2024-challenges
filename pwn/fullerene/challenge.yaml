@@ -1,0 +1,45 @@
+name: fullerene
+author: stosp
+description: |
+  I made an app. Its meshing as a service!!
+  Connect to the server with `{{ nc }}`.
+flag:
+  file: bin/flag.txt
+  
+provide:
+  - kind: zip
+    spec:
+      as: bin.zip
+      exclude:
+        - bin/flag.txt
+      files:
+        - bin
+      additional:
+        - path: bin/flag.txt
+          str: tjctf{fake_flag}
+          
+containers:
+  main:
+    build: bin
+    ports:
+      - 5000
+    k8s:
+      container:
+        securityContext:
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+              - all
+            add:
+              - chown
+              - setuid
+              - setgid
+              - sys_admin
+              - mknod
+      metadata:
+        annotations:
+          container.apparmor.security.beta.kubernetes.io/main: unconfined
+expose:
+  main:
+    - target: 5000
+      tcp: 31244

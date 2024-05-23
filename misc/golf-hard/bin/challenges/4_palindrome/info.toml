@@ -1,0 +1,55 @@
+description = '''
+
+
+4. "Topsy Turvy"
+    This one's another famously impossible regex challenge.
+    Have fun solving it!
+'''
+
+length = 18
+
+matches = [
+    'i',
+    'dad',
+    'abba',
+    'kayak',
+    'refer',
+    'civic',
+    'pullup',
+    'racecar',
+    'rotator',
+    'detartrated',
+    'wassamassaw',
+    'tattarrattat',
+    'satireveritas',
+    'dogeeseseegod',
+    'neveroddoreven',
+    'madaminedenimadam',
+    'anutforajaroftuna',
+    'wasitacaroracatisaw',
+    'amanaplanacanalpanama',
+    'satorarepotenetoperarotas',
+]
+
+nonmatches = [
+    'cashew',
+    'hamleteer',
+    'electromagnetic',
+    'zimbabwe',
+    'xerox',
+    'epiphanizing',
+    'detected',
+    'tahinis',
+    'foolproof',
+    'sailboat',
+    'racecars',
+    'redeemer',
+    'woodrow',
+    'bathtub',
+    'butterfly',
+    'scarabs',
+    'alabama',
+    'yamaha',
+    'engage',
+    'nonattributiveness',
+]

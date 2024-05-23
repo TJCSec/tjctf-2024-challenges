@@ -1,0 +1,8 @@
+name: embedder
+author: kpdfgo
+description: |
+  I'm a little rusty and forgot how to get my flag out :(
+provide:
+- rusty/target/xtensa-esp32-espidf/release/rusty
+flag:
+  file: rusty/gen-flag/flag.txt

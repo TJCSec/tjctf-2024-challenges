@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block body %}
+    <script>
+        function redirectToSite() {
+            document.location = window.location.href + "?site=" + document.getElementById("site").value
+        }
+    </script>
+    <h1>Welcome to my site reader!</h1>
+    <label for="site">Site to view:</label>
+    <input type="text" id="site" name="site">
+    <br>
+    <button onclick="redirectToSite()">Submit</button>
+{% endblock %}

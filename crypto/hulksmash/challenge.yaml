@@ -1,0 +1,12 @@
+name: hulksmash
+author: stosp
+description: |-
+  my friends password is keysmash.... :(... i got some of his old keysmashes tho.... he types kinda funny....
+
+provide:
+  - output.txt
+  - main.py
+  - keysmashes.txt
+
+flag:
+  file: flag.txt

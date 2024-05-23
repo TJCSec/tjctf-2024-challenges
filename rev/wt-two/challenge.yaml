@@ -1,0 +1,9 @@
+name: wt-two
+author: stosp
+description: |
+  wtmoo but wt-two
+
+provide:
+  - bin/wttwo
+
+flag: tjctf{wt-the-twoooooas48%@dfs}

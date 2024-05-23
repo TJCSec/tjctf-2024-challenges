@@ -1,0 +1,10 @@
+name: conversations
+author: bhkrayola
+description: |-
+  baby shark, doo-doo, doo-doo, doo-doo
+  
+provide:
+  - capture.pcap
+  
+flag:
+  file: flag.txt

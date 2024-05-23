@@ -1,0 +1,9 @@
+name: weird-crypto
+author: scienceqiu
+description: |-
+  weird crypto hmmm
+provide:
+  - bin/output.txt
+  - bin/a.py
+flag:
+  file: bin/flag.txt

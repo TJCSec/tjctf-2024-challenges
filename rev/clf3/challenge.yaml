@@ -1,0 +1,9 @@
+name: clf3
+author: stosp
+description: |
+  I fight back...
+
+provide:
+  - src/binfinal
+  
+flag: tjctf{Not_2_c0mplic2ted1ffaa1191099q221}

@@ -1,0 +1,62 @@
+description = '''
+
+
+2. "Subtraction"
+    Think addition, but not.
+'''
+
+length = 16
+
+matches = [
+    'xxxxxxxxxxxxx-xxx=xxxxxxxxxx',
+    'xxxxxxx-x=xxxxxx',
+    'xxxxxxxxxxxxxxxx-xxxxxxxxxxxxx=xxx',
+    'x-x=',
+    'xxxx-xxxx=',
+    'xx-=xx',
+    'xxxxxxxxxxx-xxxxx=xxxxxx',
+    'xxxxxxxxxx-xxxxx=xxxxx',
+    '-=',
+    'xxxxxxxxxxxxxxxxx-xxxxxxxxxxx=xxxxxx',
+    'xxxxxxxxxxxxx-xxxxxxxxxxxxx=',
+    'xxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxx=xxx',
+    'xxxxxxxxxxx-xxxxxxxxxxx=',
+    'xxxxxxxxxxxxxxxxx-xxxxx=xxxxxxxxxxxx',
+    'xxxxxxxxx-xx=xxxxxxx',
+    'xxxxxxxxxxxxxxxxxx-xxxxxxxxxxxx=xxxxxx',
+    'x-=x',
+    'xxxxxxxx-xxxxx=xxx',
+    'xxxxxxxxxx-xxxxxx=xxxx',
+    'xxxxxxxxxxxxxx-xxxxxx=xxxxxxxx',
+    'xxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxx=xxxxx',
+    'xxxxxxxxxxxxxxx-xxxx=xxxxxxxxxxx',
+    'xxxxxxxxxxxxxxxx-xxxxxxx=xxxxxxxxx',
+    'xxxxxxxxxxxxxxxxxxx-x=xxxxxxxxxxxxxxxxxx',
+]
+
+nonmatches = [
+    'xxx-xxxx=xxxxxxxxxx',
+    'xxxxxxxxxxxx-xxxxxxxxx=xx',
+    'xxxx-xxxxxxxxxxxxx=',
+    'xxxxxxxxxxxxxxx-xxxxxxx=xxxxxxx',
+    'xxxxxxxxxxx-xxxxxxx=xxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxx-xxx=xxxxxxxxxxxx',
+    'xxxx-xxxx=xxxxxxxxxxxxxxxxxx',
+    'xxxxxxxxxxxxxxx-xxx=xxxxxxxxxxx',
+    'xxxxxxxxxxxxx-xxxxxxx=',
+    'xxxxxxx-xxxxxxxx=xxxxxxxxxxx',
+    'x-xxxxxxxxxxxxxxxxxxxx=',
+    'xxxxxxxxxxxxxxx-xxxxxxxxxxxxxxx=xxxxxxxxxx',
+    'xxxxx-xxxxxxxxxx=xx',
+    'xxxxxxxxxxx-xxxxxxxxxxxxxx=xxxxxx',
+    'xxxxxxxxxxxxx-=xxxxxxxxxxxxxxx',
+    'xxxxxxxx-xxxxxxxxxx=xxxxxxxxxxxxxxxxx',
+    'xxxxxxx-xxxxxxx=xxxxxxxxxxxxxx',
+    '-xxxxxxxxxxxxxxxxxxxx=',
+    'xxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxx=x',
+    'xxxxxxxx-xxxxxxxx=xxxxxxxxxxxxxx',
+    'xxxxxx-xxxxxxxxxxxxxxxxxxx=xxxxxxxx',
+    'xx-xxxxxxxxxxxxxxx=xx',
+    'xxxxxxxx-xxxxxxxxxxxxxxxxxxxx=xxxxxxxxxxxxx',
+    'xxxxxxxxx-xx=xxxxxxxxxxxxxxxxx',
+]

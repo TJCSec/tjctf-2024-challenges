@@ -1,0 +1,11 @@
+name: lithium-stearate
+author: stosp
+description: |
+  p. sure one rev challenge might help you
+
+provide:
+  - main.cpp
+  - output2.txt
+  - common.hpp
+
+flag: tjctf{Lft-ft2-stomps/$$1i!de-2-the[left}

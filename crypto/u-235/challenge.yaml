@@ -1,0 +1,9 @@
+name: u-235
+author: stosp
+description: |-
+  Sus signature scheme?? ⾲⾲ ඞඞ
+
+provide:
+  - output.txt
+
+flag: tjctf{hay_gato_encerrado28f23}

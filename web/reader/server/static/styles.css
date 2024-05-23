@@ -1,0 +1,35 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+
+    max-width: 50em;
+
+    font-family: "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    padding: 1em 1em;
+
+    background-color: #fbf1c7;
+    color: #3c3836;
+
+}
+
+code {
+    background-color: #d5c4a1;
+    display: inline-block;
+    white-space: pre-wrap;
+}
+
+h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+
+a {
+    color: #9d0006;
+}

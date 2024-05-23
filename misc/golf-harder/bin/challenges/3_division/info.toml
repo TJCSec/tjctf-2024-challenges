@@ -1,0 +1,50 @@
+description = '''
+
+
+3. "Division"
+    I don't know what to put here, I've already divided up all my ideas for witty flavor text into the other challenges.
+'''
+
+length = 26
+
+matches = [
+    'xxxx/xxxx=x',
+    'xxxxx/x=xxxxx',
+    'xxxxxxxxxxxxxxxxxx/xxxxxx=xxx',
+    'xxxxxxxxxxxx/xxx=xxxx',
+    'xxxxxxxxxxxx/xxxxxx=xx',
+    'xxxxxxxxxxxxxxx/xxx=xxxxx',
+    'xxxxxxxxxxxx/xx=xxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxx/xxxxx=xxxxx',
+    'xxxx/xx=xx',
+    'x/x=x',
+    'xxxxxxxxxxxxxxxxxxxxxxxx/xxxx=xxxxxx',
+    'xxxxxxxxxxxxxxxxxxxx/xxxxx=xxxx',
+    'xxxxxxxxxxxxxxxxxx/xxx=xxxxxx',
+    'xxxxxxxxxxxxxxx/xxxxx=xxx',
+    'xxxxxx/xxxxxx=x',
+    'xxxxxxxxxxxxxxxxxxxxxxxx/xxxxxx=xxxx',
+    'xxxxxxxxxx/xxxxx=xx',
+    'xxxx/x=xxxx',
+]
+
+nonmatches = [
+    'xxxxxxxxxxxxxxxxxxxxxxxx/x=xx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxx/xx=xxxxxx',
+    'xxxxxxxxxxxxxxxxxx/xx=xxxx',
+    'xxxxxxxxxxxxxxxxxxxx/x=x',
+    'xxxxxxxxxxxxxxx/xxxx=x',
+    'xxxxxxxxxxxxxx/xxxx=xxxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/xxxxxx=x',
+    'xxxxxxxxx/xx=xxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxx/xxxx=xxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxx/xxx=xxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxx/xxxxx=x',
+    'xxxxx/xxxx=xxxxx',
+    'xxxxxxxx/xxx=xxx',
+    'xxxxxxxxxxxxxxxx/x=xxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/x=x',
+    'xxxxxxxxxxxxxxxxxxx/xxx=xxxxx',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx/x=xx',
+    'xxxxxxxxxxxxxxxxx/xx=xxxx',
+]

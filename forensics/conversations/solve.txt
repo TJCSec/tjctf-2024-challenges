@@ -1,0 +1,1 @@
+tshark -r capture.pcap --export-objects http,./extracted_objects && for file in ./extracted_objects/*.jpeg; do exiftool "$file" | grep "tjctf"

@@ -1,0 +1,80 @@
+description = '''
+
+
+2. "Compound"
+    It's like that energy drink from that Paul brother.
+'''
+
+length = 23
+
+matches = [
+    'by',
+    'poi',
+    'gaily',
+    'taraf',
+    'crewe',
+    'muddler',
+    'foresty',
+    'wiggery',
+    'deorbit',
+    'draggletail',
+    'wireworking',
+    'boysenberry',
+    'infieldsman',
+    'nutcrackers',
+    'freesilverism',
+    'esophagectomy',
+    'anachronistically',
+    'electrocardiogram',
+    'industrialization',
+    'contemporaneousness',
+    'hyperparathyroidism',
+    'xenotransplantation',
+    'transubstantiationalist',
+    'overindividualistically',
+    'floccinaucinihilipilification',
+    'dichlorodiphenyltrichloroethane',
+    'inuussutissarsiorsinnaajunnaarnersiutilik',
+    'sunnipaevanadalalopupeoparastlounavasimatus',
+    'cyclopentadienylpropylcyclopentadienylruthenium',
+    'kindercarnavalsoptochtvoorbereidingswerkzaamhedenplan',
+    'pinakanakakapagngitngitngitngitangpagsisinungasinungalingan',
+    'lentokonesuihkuturbiinimoottoriapumekaanikkoaliupseerioppilas',
+]
+
+nonmatches = [
+    'a',
+    'seal',
+    'idan',
+    'panful',
+    'regift',
+    'keeves',
+    'tabloids',
+    'abfarads',
+    'beetroot',
+    'glacially',
+    'bandicoot',
+    'archimagus',
+    'slingshots',
+    'declinations',
+    'crosscutting',
+    'compunctiously',
+    'wheeler-dealer',
+    'unacquirability',
+    'galvanomagnetic',
+    'spondylarthritis',
+    'disdodecahedroid',
+    'obstreperousnesses',
+    'quasi-affectionately',
+    'overcommercialization',
+    'counterrevolutionaries',
+    'phosphatidylethanolamine',
+    'ethylenediaminetetraacetate',
+    'antidisestablishmentarianism',
+    'stereoelectroencephalographically',
+    'supercalifragilisticexpialidociousness',
+    'hepaticocholangiocholecystenterostomies',
+    'pneumonoultramicroscopicsilicovolcanokoniosis',
+]
+
+

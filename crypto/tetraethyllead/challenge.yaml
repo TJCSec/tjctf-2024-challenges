@@ -1,0 +1,48 @@
+name: tetraethyllead
+author: stosp
+description: |-
+  I heard that the NSA backdoored dis... I mean DES
+  Note: my solve takes ~5 min on 1 thread of an 7-year-old Intel Core i5.
+
+  `{{ nc }}`
+
+flag:
+  file: bin/flag.txt
+
+containers:
+  main:
+    build: ./bin
+    replicas: 2
+    ports:
+      - 5000
+    resources:
+      limits:
+        cpu: 500m
+        memory: 300Mi
+      requests:
+        cpu: 50m
+        memory: 50Mi
+    k8s:
+      container:
+        securityContext:
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+              - all
+            add:
+              - chown
+              - setuid
+              - setgid
+              - sys_admin
+              - mknod
+      metadata:
+        annotations:
+          container.apparmor.security.beta.kubernetes.io/main: unconfined
+
+expose:
+  main:
+    - target: 5000
+      tcp: 31234
+
+provide:
+- bin/server.py

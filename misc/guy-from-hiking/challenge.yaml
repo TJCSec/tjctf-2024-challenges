@@ -1,0 +1,6 @@
+name: guy-from-hiking
+author: ashwathg
+description: |-
+  Help! I saw a man with 2 others while hiking the other day, and I only know his Instagram handle... Can you help me find some info about him? I looked through his Instagram and all the information there is fake.. but I heard someone call him Smith, so that must be his last name! See if you can find his birthday and first name. IG handle - exclusivealphamale (flag is in format of `tjctf{firstname_mm/dd}` with firstname all lowercase)
+flag:
+  file: flag.txt

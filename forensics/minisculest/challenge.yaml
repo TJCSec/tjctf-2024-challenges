@@ -1,0 +1,13 @@
+name: minisculest
+author: sToro
+description: |-
+
+  Something happened to my image and now the file is 95% smaller!
+  Can you figure out what happened and fix it??
+
+
+flag: tjctf{wish_it_were_supported_better_1d428409}
+
+provide:
+  - minisculest.png
+

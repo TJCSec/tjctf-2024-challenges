@@ -1,0 +1,19 @@
+name: c-8
+author: stosp
+description: |-
+  I found these files on sciencequis hard drive... 
+  Can you help me decrypt it? I'm p sure he's writing a fanfic about me
+  he only knows the affine cipher.
+  note; you need to decrypt all the files w/ affine first, and then you can run dec.py
+  
+  hint; (also in the discord), affine modulus n = 18446744073709551629
+
+provide:
+  - ./bin/enc/enc.py
+  - ./bin/enc/dec.py
+  - ./bin/enc/re_plaus.py
+  - ./bin/enc/plausibly.deniable
+
+
+flag: tjctf{sssstosssssp_sooooooooooooooooooooo_cute-13748961}
+

@@ -1,0 +1,35 @@
+name: golf-harder
+author: aedan
+description: |-
+  now it's time for some real golf! once again, five levels.
+
+  `{{ nc }}`
+flag: tjctf{davidebyzero_is_my_hero_f7f43a2d}
+containers:
+  main:
+    build: bin
+    replicas: 2
+    ports:
+    - 5000
+    k8s:
+      container:
+        securityContext:
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - all
+            add:
+            - chown
+            - setuid
+            - setgid
+            - sys_admin
+            - mknod
+      metadata:
+        annotations:
+          container.apparmor.security.beta.kubernetes.io/main: unconfined
+expose:
+  main:
+  - target: 5000
+    tcp: 31726
+provide:
+- bin/golf.py

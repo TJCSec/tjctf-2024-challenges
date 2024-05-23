@@ -1,0 +1,11 @@
+name: fetcher
+author: kpdfgo
+description: |
+  "that's so fetch!" - mean girls (2004)
+
+  [Instancer](https://instancer.tjctf.org/challenge/fetcher)
+flag:
+  file: src/flag.txt
+
+provide:
+- src/app.js

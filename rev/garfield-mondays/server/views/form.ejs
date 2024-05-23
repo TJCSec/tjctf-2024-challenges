@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <titleGarfield Mondayss</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="text-center">
+	<div class="login-container">
+        <h2>Login</h2>
+		<form action="form_handler" method="post" id="loginForm">
+            <div class="form-group">
+                <label>Username</label>
+                <input class="form-control" type="text" name="username" placeholder="Username" />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password" />
+            </div>
+			<button type="submit">Login</button>
+		</form>
+	</div>
+    
+    <div class="message-box" id="messageBox"></div>
+
+    <script>
+    const messageBox = document.getElementById('messageBox');
+
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const username = formData.get('username');
+        const password = formData.get('password');
+        axios.post('/form_handler', {
+            username: username,
+            password: password
+        })
+        .then(function (response) {
+            const result = response.data;
+            showMessage(result);
+        })
+        .catch(function (error) {
+            console.error('Error:', error);
+        });
+    });
+
+    function showMessage(result) {
+        messageBox.textContent = result.message;
+        messageBox.style.display = 'block';
+
+        if (result.success) {
+            messageBox.className = 'message-box success';
+        } else {
+            messageBox.className = 'message-box failure';
+        }
+    }
+</script>
+</body>
+</html>

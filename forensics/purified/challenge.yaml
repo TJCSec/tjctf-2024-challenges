@@ -1,0 +1,10 @@
+name: purified
+author: sToro
+
+description: |-
+  The purest of images can survive any trial
+
+flag: tjctf{r1bbit_ribb1t_69bb0e1d}
+
+provide:
+  - out.qoi

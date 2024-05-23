@@ -1,0 +1,2 @@
+if you want to mesh a chunk use "meshchunk" to get the buffer, put it into "output.txt", then run "show.py" to visualize it
+Vuln is in main.cpp and sphere_engine.cpp

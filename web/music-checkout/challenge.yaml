@@ -1,0 +1,21 @@
+author: sToro
+name: music-checkout
+description: |-
+  I've always thought it was a little rude for receiptify not to let you pick the songs
+  that *you* think are important, so now you can!
+
+  [Instancer](https://instancer.tjctf.org/challenge/music-checkout)
+flag:
+  file: server/flag.txt
+
+provide:
+  - kind: zip
+    spec:
+      as: server.zip
+      exclude:
+        - server/flag.txt
+      files:
+        - server
+      additional:
+        - path: server/flag.txt
+          str: tjctf{fake_flag}

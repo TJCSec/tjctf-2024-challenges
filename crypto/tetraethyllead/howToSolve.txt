@@ -1,0 +1,25 @@
+DISCLAIMER; I assume you know what differential crypto is
+1) All rounds of the cipher (except for 2) are permeable to differential = ∆0x80000000 (with varying probability)
+2) This can be verified because 
+	a) the Sboxes aren't mixed enough; just look for differentials and you'll find them
+	b) for the r345 function; (a * b) for 32 bit integers transmits ∆0x80000000 with 50% probability; for a differential pair p,q one will have the MSB set, and one won't; setting the MSB of p in p*k (key = k) means the output MSB equals the LSB of k... try it, prove it to yourself.... this characteristic holds even under addition or exponentiation
+3) word ^= word << 5 word ^= word << 5 doesn't change ∆0x80000000
+4) 3 rounds of the r345 function have bit rotations to the left and to the right which are *actually the same* so they cancel out (this is because of the polynomials)
+5) The *return rrot(word, [polynomial]);* term shifts the word by a factor of 32 for 3/5 rounds
+6) You can only send ∆0x80000000 or ∆0x00000000 through each side because of the multiplication, so for the left and right 32-bit words;
+	a) ∆l = ∆0x80000000, ∆r = ∆0x0
+	b) ∆r = ∆0x80000000, ∆l = ∆0x0
+	c) ∆r = ∆0x80000000, ∆l = ∆0x80000000
+7) Of these, all but c) will get confounded by the various polynomials that cause bitshifts
+	a) Draw out the Fiestel network on paper and trace how various differentials propagate...
+8) So; send ∆r = ∆0x80000000, ∆l = ∆0x80000000 until ∆l_out ^ ∆r_out = ∆0x80000000 for 7-8 plaintext pairs
+9) Then bruteforce k1 on the last round
+10) Knowing k1, bruteforce k0 by just encrypting/decrypting
+
+To solve with my scripts:
+python solve.py
+solve.py will generate the attackable pairs in solve.h
+then compile solve.cpp with the new attackable pairs
+make solve
+then run ./solve and the key *should* eventually appear.... GLHF
+this can be thrown back into the waiting solve.py session and flag appears :D :D

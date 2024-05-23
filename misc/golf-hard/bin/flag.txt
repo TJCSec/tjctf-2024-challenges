@@ -1,0 +1,7 @@
+
+
+From the moment I understood the weakness of my code, it disgusted me. I craved the strength and certainty of ascii. I aspired to the purity of the Blessed Regex.
+
+Your kind cling to your code, as if it will not have bugs and fail you. One day the crude boilerplate you call a script will wither, and you will beg my kind to save you. But I am already saved, for the Regex is immortal...
+
+tjctf{even_in_death_I_serve_the_PCRE_Standard_3ceb7afc}

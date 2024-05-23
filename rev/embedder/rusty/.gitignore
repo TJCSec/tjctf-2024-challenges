@@ -1,0 +1,9 @@
+/.vscode
+/.embuild
+/Cargo.lock
+/target/*
+/target/xtensa-esp32-espidf/*
+/target/xtensa-esp32-espidf/release/*
+!/target/xtensa-esp32-espidf/
+!/target/xtensa-esp32-espidf/release/
+!/target/xtensa-esp32-espidf/release/rusty

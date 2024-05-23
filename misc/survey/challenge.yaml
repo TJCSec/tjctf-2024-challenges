@@ -1,0 +1,7 @@
+name: survey
+author: TJCTF Organizers
+description: |-
+  Thanks for playing in TJCTF 2024! Please fill out our [survey](https://forms.gle/e8J9s45gK42NCdMk7) so we can make TJCTF better next year!
+flag: tjctf{and_we_say_bye_bye}
+value: 1
+tiebreakEligible: false

@@ -1,0 +1,11 @@
+name: iodomethane
+author: stosp
+description: |-
+  AINT NO HILL HIGH ENOUGH....
+
+provide:
+  - main.py
+  - out.txt
+
+flag:
+  file: flag.txt

@@ -1,0 +1,35 @@
+name: golf-hard
+author: aedan
+description: |-
+  regex below par? note that this challenge has five levels.
+
+  `{{ nc }}`
+flag: tjctf{even_in_death_I_serve_the_PCRE_Standard_3ceb7afc}
+containers:
+  main:
+    build: bin
+    replicas: 2
+    ports:
+    - 5000
+    k8s:
+      container:
+        securityContext:
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+            - all
+            add:
+            - chown
+            - setuid
+            - setgid
+            - sys_admin
+            - mknod
+      metadata:
+        annotations:
+          container.apparmor.security.beta.kubernetes.io/main: unconfined
+expose:
+  main:
+  - target: 5000
+    tcp: 31627
+provide:
+- bin/golf.py

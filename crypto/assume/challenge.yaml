@@ -1,0 +1,13 @@
+name: assume
+
+author: samarth
+description: |-
+  assume for the sake of contradiction that pet the catloe
+  
+
+flag:
+  file: ./flag.txt
+provide:
+  - ./main.sage
+  - ./log.txt
+

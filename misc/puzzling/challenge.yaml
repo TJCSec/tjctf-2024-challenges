@@ -1,0 +1,10 @@
+name: puzzling
+author: sToro
+description: |-
+    I did one too many jigsaw puzzles and now my images are all shuffled!
+    Can you fix this bad boy and get the flag?
+
+flag: tjctf{why_is_this_puzzle_so_small_2c9e25db}
+
+provide:
+    - shuffled.png

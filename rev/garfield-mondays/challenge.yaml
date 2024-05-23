@@ -1,0 +1,23 @@
+name: garfield-mondays
+author: bhkrayola
+description: |-
+  Garfield hates mondays. Though, if you talk to him during his lasagna snack break, he might tell you a secret.
+
+  {{ link }}
+
+provide:
+  - garfield-mondays.apk
+  
+flag:
+  file: flag.txt
+  
+containers:
+  main:
+    build: server
+    ports:
+      - 8080
+
+expose:
+  main:
+    - target: 8080
+      http: garfield-mondays

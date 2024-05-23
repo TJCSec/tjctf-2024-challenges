@@ -1,0 +1,11 @@
+name: alkane
+author: stosp
+description: |-
+  I hate standing in line for gas....
+
+provide:
+  - output.txt
+  - main.py
+
+flag:
+  file: flag.txt

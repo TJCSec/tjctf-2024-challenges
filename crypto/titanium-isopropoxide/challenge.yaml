@@ -1,0 +1,12 @@
+name: titanium-isopropoxide
+author: stosp
+description: |-
+  my friend encrypted my flag, but at least i made backups??? simple words??? can you get it back??
+
+provide:
+  - bin/flag2.txt.enc
+  - bin/flag3.txt.enc
+  - bin/main.cpp
+
+flag:
+  file: ./bin/flag.txt
